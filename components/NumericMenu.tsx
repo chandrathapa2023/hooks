@@ -33,6 +33,7 @@ export function NumericMenu(props: NumericMenuProps) {
                 type="radio"
                 checked={item.isRefined}
                 onChange={() => refine(item.value)}
+                disabled={item.noRefinement && !item.isRefined}
               />
               <span className="ais-NumericMenu-labelText">{item.label}</span>
             </label>
