@@ -24,6 +24,7 @@ import {
 } from 'react-instantsearch-hooks-web';
 
 import {
+  NumericMenu,
   Panel,
   QueryRuleContext,
   QueryRuleCustomData,
@@ -87,8 +88,21 @@ export function App() {
                 showMore={true}
               />
             </Panel>
-            <Panel header="Price">
-              <RangeInput attribute="price" />
+            <Panel header="Price Range">
+              <NumericMenu
+                attribute="price"
+                items={[
+                  { label: "Under 200", end: 200 },
+                  { label: "200 to 500", start: 200, end: 500 },
+                  { label: "500 to 1000", start: 500, end: 1000 },
+                  { label: "1000 to 2000", start: 1000, end: 2000 },
+                  { label: "2000 to 4000", start: 2000, end: 4000 },
+                  { label: "4000 to 6000", start: 4000, end: 6000 },
+                  { label: "6000 to 8000", start: 6000, end: 8000 },
+                  { label: "Over 8000", start: 8000 },
+                  { label: "All" },
+                ]}
+              />
             </Panel>
             <Panel header="Free Shipping">
               <ToggleRefinement
